@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static ru.sportmarafon.data.TestData.*;
 
 @DisplayName("Проверка sport-marafon.ru")
-@Tag("All")
+@Tag("WEB")
 public class SportMarafonTests extends TestBase {
     TestData data = new TestData();
     MainPage mainPage = new MainPage();
@@ -28,8 +28,7 @@ public class SportMarafonTests extends TestBase {
     @Test
     @Tags({
             @Tag("SMOKE"),
-            @Tag("WEB"),
-            @Tag("Positive")
+            @Tag("POSITIVE")
     })
     @Feature("Тесты на главной")
     @Story("Позитивный тест")
@@ -45,8 +44,7 @@ public class SportMarafonTests extends TestBase {
     @Test
     @Tags({
             @Tag("SMOKE"),
-            @Tag("WEB"),
-            @Tag("Positive")
+            @Tag("POSITIVE")
     })
     @Feature("Тесты на авторизацию")
     @Story("Позитивный тест")
@@ -61,7 +59,7 @@ public class SportMarafonTests extends TestBase {
     }
 
     @Test
-    @Tag("Negative")
+    @Tag("NEGATIVE")
     @Feature("Тесты на авторизацию")
     @Story("Негативный тест")
     @Owner("@egorovma")
@@ -77,8 +75,7 @@ public class SportMarafonTests extends TestBase {
     @Test
     @Tags({
             @Tag("REGRESSION"),
-            @Tag("WEB"),
-            @Tag("Positive")
+            @Tag("POSITIVE")
     })
     @Feature("Тесты на регистрацию")
     @Story("Позитивный тест")
@@ -95,8 +92,7 @@ public class SportMarafonTests extends TestBase {
     @Test
     @Tags({
             @Tag("REGRESSION"),
-            @Tag("WEB"),
-            @Tag("Positive")
+            @Tag("POSITIVE")
     })
     @Feature("Тесты личный кабинет")
     @Story("Позитивный тест")

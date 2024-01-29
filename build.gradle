@@ -50,7 +50,7 @@ dependencies {
     )
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
     systemProperties(System.getProperties())
 
@@ -62,8 +62,32 @@ tasks.withType(Test) {
     }
 }
 
-task all_test(type: Test) {
+tasks.register('web_test', Test) {
     useJUnitPlatform {
-        includeTags("All")
+        includeTags("WEB")
+    }
+}
+
+tasks.register('smoke_test', Test) {
+    useJUnitPlatform {
+        includeTags("SMOKE")
+    }
+}
+
+tasks.register('regression_test', Test) {
+    useJUnitPlatform {
+        includeTags("REGRESSION")
+    }
+}
+
+tasks.register('positive_test', Test) {
+    useJUnitPlatform {
+        includeTags("POSITIVE")
+    }
+}
+
+tasks.register('negative_test', Test) {
+    useJUnitPlatform {
+        includeTags("NEGATIVE")
     }
 }
