@@ -7,7 +7,7 @@ public class MainPageStep {
 
     MainPage mainPage = new MainPage();
 
-    @Step("Перехрд на форму авторизации")
+    @Step("Переход на форму авторизации")
     public void linkAuth(String url) {
         mainPage.openMainPage(url)
                 .btnAuth();

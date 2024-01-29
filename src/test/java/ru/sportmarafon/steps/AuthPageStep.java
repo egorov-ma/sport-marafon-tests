@@ -8,18 +8,11 @@ public class AuthPageStep {
 
     AuthPage authPage = new AuthPage();
 
-
     @Step("Выполнение авторизации под пользователем {email}")
     public void login(String email, String password) {
         authPage.setEmail(email)
                 .setPass(password)
                 .enter();
-    }
-
-    @Step("Заполнение пароля")
-    public void setRegisterPass(String pass) {
-        authPage.setRegisterPass(pass)
-                .setRegisterConfirmPass(pass);
     }
 
     @Step("Заполнение формы регистрации")
@@ -32,6 +25,4 @@ public class AuthPageStep {
                 .setRegisterConfirmPass(data.password)
                 .submit();
     }
-
-
 }

@@ -1,9 +1,13 @@
 package ru.sportmarafon.tests;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
 import ru.sportmarafon.data.TestData;
-import ru.sportmarafon.pages.*;
+import ru.sportmarafon.pages.AuthPage;
+import ru.sportmarafon.pages.MainPage;
 import ru.sportmarafon.steps.AuthPageStep;
 import ru.sportmarafon.steps.MainPageStep;
 import ru.sportmarafon.steps.PersonalAreaPageSteps;
@@ -20,7 +24,6 @@ public class SportMarafonTests extends TestBase {
     AuthPage authPage = new AuthPage();
     AuthPageStep authPageStep = new AuthPageStep();
     PersonalAreaPageSteps personalAreaPageSteps = new PersonalAreaPageSteps();
-
 
     @Test
     @Tags({
@@ -105,6 +108,4 @@ public class SportMarafonTests extends TestBase {
         personalAreaPageSteps.openTestPersonalProfile();
         personalAreaPageSteps.checkTestPersonalData();
     }
-
-
 }
