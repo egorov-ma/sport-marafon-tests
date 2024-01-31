@@ -17,6 +17,9 @@ def slf4jVersion = "2.0.9",
     assertjVersion = "3.25.2"
 
 allure {
+    adapter {
+        aspectjVersion.set("1.9.21")
+    }
     report {
         version.set(allureVersion)
     }
