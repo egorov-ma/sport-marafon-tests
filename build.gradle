@@ -6,11 +6,15 @@ plugins {
 group = 'ru.sportmarafon'
 version = '1.0-SNAPSHOT'
 
-def slf4jVersion = "2.0.7",
-    junitVersion = "5.10.0",
-    selenideVersion = "6.18.0",
+def slf4jVersion = "2.0.9",
+    junitVersion = "5.10.1",
+    selenideVersion = "7.0.2",
+    fakerVersion = "1.0.2",
+    jschVersion = "0.1.55",
     allureVersion = "2.24.0",
-    fakerVersion = "1.0.2"
+    webdrivermanagerVersion = "5.6.3",
+    ownerVersion = "1.0.12",
+    assertjVersion = "3.25.2"
 
 allure {
     report {
@@ -41,13 +45,15 @@ dependencies {
     testImplementation(
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "com.codeborne:selenide:$selenideVersion",
+            "com.github.javafaker:javafaker:$fakerVersion",
+            "com.jcraft:jsch:$jschVersion",
+            "org.slf4j:slf4j-simple:$slf4jVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "com.github.javafaker:javafaker:$fakerVersion"
-    )
-
+            "io.github.bonigarcia:webdrivermanager:$webdrivermanagerVersion",
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "org.assertj:assertj-core:$assertjVersion")
     testRuntimeOnly(
-            "org.slf4j:slf4j-simple:$slf4jVersion"
-    )
+            "org.slf4j:slf4j-simple:$slf4jVersion")
 }
 
 tasks.withType(Test).configureEach {

@@ -101,7 +101,7 @@ public class SportMarafonTests extends TestBase {
     @Link(url = "https://sport-marafon.ru/")
     @DisplayName("Проверка профиля клиента")
     public void personalProfileTest() {
-        personalAreaPageSteps.openTestPersonalProfile();
+        personalAreaPageSteps.openTestPersonalProfile(TEST_EMAIL, TEST_PASSWORD);
         personalAreaPageSteps.checkTestPersonalData();
     }
 }

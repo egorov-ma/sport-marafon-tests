@@ -15,9 +15,9 @@ public class PersonalAreaPageSteps {
     PersonalAreaPage personalAreaPage = new PersonalAreaPage();
 
     @Step("Открытие Профиля клиента, раздела - 'Моя информация'")
-    public void openTestPersonalProfile() {
+    public void openTestPersonalProfile(String email, String pass) {
         mainPageStep.linkAuth(baseUrl);
-        authPageStep.login(TEST_EMAIL, TEST_PASSWORD);
+        authPageStep.login(email, pass);
         mainPage.linkUser();
         personalAreaPage.linkPersonalProfile();
     }
