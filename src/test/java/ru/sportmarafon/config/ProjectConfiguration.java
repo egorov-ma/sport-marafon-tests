@@ -15,11 +15,11 @@ public class ProjectConfiguration {
     }
 
     public void webConfig() {
-        Configuration.pageLoadStrategy = "eager";
+        Configuration.baseUrl = webConfig.baseUrl();
         Configuration.browser = webConfig.browser().toString();
         Configuration.browserVersion = webConfig.browserVersion();
         Configuration.browserSize = webConfig.browserSize();
-        Configuration.baseUrl = webConfig.baseUrl();
+        Configuration.pageLoadStrategy = "eager";
         if (webConfig.isRemote()) {
             Configuration.remote = String.valueOf(webConfig.remoteUrl());
             DesiredCapabilities capabilities = new DesiredCapabilities();
