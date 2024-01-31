@@ -50,14 +50,13 @@ ____
 
 ### Запуск тестов из терминала
 
-Локальный запуск.
-Из корневой директории проекта выполнить:
+Для запуска тестов локально использовать команду ниже:
 ```
-gradle clean web_test  запуск всех Web тестов
-gradle clean smoke_test  запуск smoke тестов
-gradle clean regression_test запуск regression тестов 
-gradle clean positive_test запуск positive тестов 
-gradle clean negative_test запуск negative тестов 
+./gradlew clean test -Denv=local
+```
+Для запуска тестов на Selenoid использовать команду ниже:
+```
+./gradlew clean test -Denv=prod 
 ```
 
 ---
