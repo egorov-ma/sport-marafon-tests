@@ -8,7 +8,7 @@ version = '1.0-SNAPSHOT'
 
 def slf4jVersion = "2.0.9",
     junitVersion = "5.10.1",
-    selenideVersion = "6.18.0",
+    selenideVersion = "6.19.1",
     fakerVersion = "1.0.2",
     jschVersion = "0.1.55",
     allureVersion = "2.24.0",
