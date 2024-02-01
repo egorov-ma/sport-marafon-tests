@@ -8,8 +8,8 @@ public class MainPageStep {
     MainPage mainPage = new MainPage();
 
     @Step("Переход на форму авторизации")
-    public void linkAuth(String url) {
+    public void openAuthForm(String url) {
         mainPage.openMainPage(url)
-                .btnAuth();
+                .clickAuth();
     }
 }

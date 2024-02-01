@@ -33,53 +33,53 @@ public class AuthPage {
     }
 
     @Step("Нажимаем кнопку 'Войти'")
-    public void enter() {
+    public void clickEnter() {
         buttonEnter.click();
     }
 
     @Step("Переходим на форму 'Регистрация'")
-    public AuthPage linkRegistration() {
+    public AuthPage clickRegistration() {
         linkRegistration.click();
         return this;
     }
 
     @Step("Вводим ФИО - {fullName}")
-    public AuthPage setRegisterName(String fullName) {
+    public AuthPage setRegistrationName(String fullName) {
         inputRegisterName.setValue(fullName);
         return this;
     }
 
     @Step("Вводим номер телефона - {phone}")
-    public AuthPage setRegisterPhone(String phone) {
+    public AuthPage setRegistrationPhone(String phone) {
         inputRegisterPhone.setValue(phone);
         return this;
     }
 
     @Step("Вводим email - {email}")
-    public AuthPage setRegisterEmail(String email) {
+    public AuthPage setRegistrationEmail(String email) {
         inputRegisterEmail.setValue(email);
         return this;
     }
 
     @Step("Вводим пароль")
-    public AuthPage setRegisterPass(String pass) {
+    public AuthPage setRegistrationPass(String pass) {
         inputRegisterPassword.setValue(pass);
         return this;
     }
 
     @Step("Вводим подтверждение пароля")
-    public AuthPage setRegisterConfirmPass(String pass) {
+    public AuthPage setRegistrationConfirmPass(String pass) {
         inputRegisterConfirmPassword.setValue(pass);
         return this;
     }
 
     @Step("Нажимаем кнопку 'Зарегистрироваться'")
-    public void submit() {
+    public void clickSubmit() {
         buttonRegisterSubmit.click();
     }
 
     @Step("Проверяем текст ошиби")
-    public void negativeCheckAuth(String msg) {
+    public void checkNegativeAuth(String msg) {
         errMsg.shouldHave(text(msg));
     }
 }

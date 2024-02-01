@@ -16,10 +16,10 @@ public class PersonalAreaPageSteps {
 
     @Step("Открытие Профиля клиента, раздела - 'Моя информация'")
     public void openTestPersonalProfile(String email, String pass) {
-        mainPageStep.linkAuth(baseUrl);
+        mainPageStep.openAuthForm(baseUrl);
         authPageStep.login(email, pass);
-        mainPage.linkUser();
-        personalAreaPage.linkPersonalProfile();
+        mainPage.clickUser();
+        personalAreaPage.clickPersonalProfile();
     }
 
     @Step("Проверка данных тестового клиента")

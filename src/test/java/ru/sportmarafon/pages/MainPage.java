@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.CollectionCondition.texts;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -23,18 +24,18 @@ public class MainPage {
     }
 
     @Step("Нажимаем кнопку 'Вход'")
-    public void btnAuth() {
+    public void clickAuth() {
         buttonAuth.click();
     }
 
     @Step("Переходим в профиль клиента")
-    public void linkUser() {
+    public void clickUser() {
         linkHeaderUser.click();
     }
 
     @Step("Проверка досупности личного кабмнета")
-    public void checkUser() {
-        linkHeaderUser.click();
+    public void userVisibilityCheck() {
+        linkHeaderUser.shouldBe(visible);
     }
 
     @Step("Проверка 'Шапки' главной страницы")

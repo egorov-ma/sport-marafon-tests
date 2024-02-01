@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import ru.sportmarafon.config.ConfigReader;
 import ru.sportmarafon.config.ProjectConfiguration;
-import ru.sportmarafon.config.web.WebConfig;
+import ru.sportmarafon.config.WebConfig;
 import ru.sportmarafon.helpers.Attach;
 
 public class TestBase {

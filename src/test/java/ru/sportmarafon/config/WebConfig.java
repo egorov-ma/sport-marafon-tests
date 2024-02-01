@@ -1,4 +1,4 @@
-package ru.sportmarafon.config.web;
+package ru.sportmarafon.config;
 
 import org.aeonbits.owner.Config;
 

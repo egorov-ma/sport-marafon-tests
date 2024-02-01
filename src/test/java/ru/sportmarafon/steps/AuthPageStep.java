@@ -12,17 +12,17 @@ public class AuthPageStep {
     public void login(String email, String password) {
         authPage.setEmail(email)
                 .setPass(password)
-                .enter();
+                .clickEnter();
     }
 
     @Step("Заполнение формы регистрации")
     public void setRegistrationForm(TestData data) {
-        authPage.linkRegistration()
-                .setRegisterName(data.fullName)
-                .setRegisterPhone(data.phone)
-                .setRegisterEmail(data.email)
-                .setRegisterPass(data.password)
-                .setRegisterConfirmPass(data.password)
-                .submit();
+        authPage.clickRegistration()
+                .setRegistrationName(data.fullName)
+                .setRegistrationPhone(data.phone)
+                .setRegistrationEmail(data.email)
+                .setRegistrationPass(data.password)
+                .setRegistrationConfirmPass(data.password)
+                .clickSubmit();
     }
 }

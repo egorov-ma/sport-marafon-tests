@@ -13,7 +13,7 @@ public class PersonalAreaPage {
             inputPhone = $("#personal_profile_PERSONAL_PHONE");
 
     @Step("Переход в раздел 'Моя информация'")
-    public void linkPersonalProfile() {
+    public void clickPersonalProfile() {
         linkPersonalProfile.click();
     }
 

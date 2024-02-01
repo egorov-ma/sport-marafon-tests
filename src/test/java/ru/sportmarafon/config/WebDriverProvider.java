@@ -6,9 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import ru.sportmarafon.config.web.Browser;
-import ru.sportmarafon.config.web.WebConfig;
 
 import java.util.Objects;
 import java.util.function.Supplier;

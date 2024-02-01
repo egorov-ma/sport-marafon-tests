@@ -53,9 +53,9 @@ public class SportMarafonTests extends TestBase {
     @Link(url = "https://sport-marafon.ru/")
     @DisplayName("Проверка авторизации")
     void successfulAuthTest() {
-        mainPageStep.linkAuth(baseUrl);
+        mainPageStep.openAuthForm(baseUrl);
         authPageStep.login(TEST_EMAIL, TEST_PASSWORD);
-        mainPage.checkUser();
+        mainPage.userVisibilityCheck();
     }
 
     @Test
@@ -67,9 +67,9 @@ public class SportMarafonTests extends TestBase {
     @Link(url = "https://sport-marafon.ru/")
     @DisplayName("Проверка некорректной авторизации")
     void negativeAuthTest() {
-        mainPageStep.linkAuth(baseUrl);
+        mainPageStep.openAuthForm(baseUrl);
         authPageStep.login(WRONG_TEST_EMAIL, TEST_PASSWORD);
-        authPage.negativeCheckAuth(AUTH_ERR_MSG);
+        authPage.checkNegativeAuth(AUTH_ERR_MSG);
     }
 
     @Test
@@ -84,9 +84,9 @@ public class SportMarafonTests extends TestBase {
     @Link(url = "https://sport-marafon.ru/")
     @DisplayName("Проверка регистрации")
     public void registrationTest() {
-        mainPageStep.linkAuth(baseUrl);
+        mainPageStep.openAuthForm(baseUrl);
         authPageStep.setRegistrationForm(data);
-        mainPage.checkUser();
+        mainPage.userVisibilityCheck();
     }
 
     @Test

@@ -1,6 +1,5 @@
 package ru.sportmarafon.config;
 
-import ru.sportmarafon.config.web.WebConfig;
 import org.aeonbits.owner.ConfigFactory;
 
 public enum ConfigReader {
