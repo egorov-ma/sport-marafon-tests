@@ -6,7 +6,9 @@ build/
 
 ### Gradle ###
 .gradlew
+gradlew
 .gradlew.bat
+gradlew.bat
 .settings.gradle.kts
 
 ### IntelliJ IDEA ###
