@@ -36,9 +36,8 @@ public class MainPage {
     }
 
     @Step("Нажимаем кнопку 'Поиск'")
-    public MainPage clickSearch() {
+    public void clickSearch() {
         btnSearch.click();
-        return this;
     }
 
 
