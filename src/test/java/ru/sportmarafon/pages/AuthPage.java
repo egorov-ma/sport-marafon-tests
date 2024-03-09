@@ -2,6 +2,7 @@ package ru.sportmarafon.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import ru.sportmarafon.data.TestData;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -21,61 +22,78 @@ public class AuthPage {
             buttonRegisterSubmit = $("#REGISTER_register_submit_button");
 
     @Step("Вставляем email - {email}")
-    public AuthPage setEmail(String email) {
+    private AuthPage setEmail(String email) {
         inputEmail.setValue(email);
         return this;
     }
 
     @Step("Вставляем пароль")
-    public AuthPage setPass(String pass) {
+    private AuthPage setPass(String pass) {
         inputPass.setValue(pass);
         return this;
     }
 
     @Step("Нажимаем кнопку 'Войти'")
-    public void clickEnter() {
+    private void clickEnter() {
         buttonEnter.click();
     }
 
     @Step("Переходим на форму 'Регистрация'")
-    public AuthPage clickRegistrationLink() {
+    private AuthPage clickRegistrationLink() {
         linkRegistration.click();
         return this;
     }
 
     @Step("Вводим ФИО - {fullName}")
-    public AuthPage setRegistrationName(String fullName) {
+    private AuthPage setRegistrationName(String fullName) {
         inputRegisterName.setValue(fullName);
         return this;
     }
 
     @Step("Вводим номер телефона - {phone}")
-    public AuthPage setRegistrationPhone(String phone) {
+    private AuthPage setRegistrationPhone(String phone) {
         inputRegisterPhone.setValue(phone);
         return this;
     }
 
     @Step("Вводим email - {email}")
-    public AuthPage setRegistrationEmail(String email) {
+    private AuthPage setRegistrationEmail(String email) {
         inputRegisterEmail.setValue(email);
         return this;
     }
 
     @Step("Вводим пароль")
-    public AuthPage setRegistrationPass(String pass) {
+    private AuthPage setRegistrationPass(String pass) {
         inputRegisterPassword.setValue(pass);
         return this;
     }
 
     @Step("Вводим подтверждение пароля")
-    public AuthPage setRegistrationConfirmPass(String pass) {
+    private AuthPage setRegistrationConfirmPass(String pass) {
         inputRegisterConfirmPassword.setValue(pass);
         return this;
     }
 
     @Step("Нажимаем кнопку 'Зарегистрироваться'")
-    public void clickSubmit() {
+    private void clickSubmit() {
         buttonRegisterSubmit.click();
+    }
+
+
+    @Step("Выполнение авторизации под пользователем {email}")
+    public void login(String email, String password) {
+        setEmail(email).setPass(password).clickEnter();
+    }
+
+    @Step("Заполнение формы регистрации")
+    public void setRegistrationForm(TestData data) {
+        clickRegistrationLink()
+                .setRegistrationName(data.fullName)
+                .setRegistrationPhone(data.phone)
+                .setRegistrationEmail(data.email)
+                .setRegistrationPass(data.password)
+                .setRegistrationConfirmPass(data.password)
+                .clickSubmit();
     }
 
     @Step("Проверяем текст ошибки")
