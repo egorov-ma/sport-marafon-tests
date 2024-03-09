@@ -23,9 +23,9 @@ public class PersonalAreaPageSteps {
     }
 
     @Step("Проверка данных тестового клиента")
-    public void checkTestPersonalData() {
-        personalAreaPage.checkPersonalName(TEST_NAME);
-        personalAreaPage.checkEmail(TEST_EMAIL);
-        personalAreaPage.checkPhone(TEST_PHONE);
+    public void checkTestPersonalData(String name, String email, String phone) {
+        personalAreaPage.checkPersonalName(name);
+        personalAreaPage.checkEmail(email);
+        personalAreaPage.checkPhone(phone);
     }
 }
