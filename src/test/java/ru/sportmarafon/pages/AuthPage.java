@@ -38,7 +38,7 @@ public class AuthPage {
     }
 
     @Step("Переходим на форму 'Регистрация'")
-    public AuthPage clickRegistration() {
+    public AuthPage clickRegistrationLink() {
         linkRegistration.click();
         return this;
     }
@@ -78,7 +78,7 @@ public class AuthPage {
         buttonRegisterSubmit.click();
     }
 
-    @Step("Проверяем текст ошиби")
+    @Step("Проверяем текст ошибки")
     public void checkNegativeAuth(String msg) {
         errMsg.shouldHave(text(msg));
     }

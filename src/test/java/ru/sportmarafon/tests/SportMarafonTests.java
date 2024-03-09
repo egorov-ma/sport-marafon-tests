@@ -9,10 +9,8 @@ import ru.sportmarafon.data.TestData;
 import ru.sportmarafon.pages.AuthPage;
 import ru.sportmarafon.pages.MainPage;
 import ru.sportmarafon.steps.AuthPageStep;
-import ru.sportmarafon.steps.MainPageStep;
 import ru.sportmarafon.steps.PersonalAreaPageSteps;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static ru.sportmarafon.data.TestData.*;
 
 @DisplayName("Проверка sport-marafon.ru")
@@ -20,7 +18,6 @@ import static ru.sportmarafon.data.TestData.*;
 public class SportMarafonTests extends TestBase {
     TestData data = new TestData();
     MainPage mainPage = new MainPage();
-    MainPageStep mainPageStep = new MainPageStep();
     AuthPage authPage = new AuthPage();
     AuthPageStep authPageStep = new AuthPageStep();
     PersonalAreaPageSteps personalAreaPageSteps = new PersonalAreaPageSteps();
@@ -36,8 +33,8 @@ public class SportMarafonTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Link(url = "https://sport-marafon.ru/")
     @DisplayName("Проверка открытия главной")
-    void mainPageTest() {
-        mainPage.openMainPage(baseUrl);
+    void mainPageOpenTest() {
+        mainPage.openMainPage();
         mainPage.checkMainHeader();
     }
 
@@ -53,7 +50,7 @@ public class SportMarafonTests extends TestBase {
     @Link(url = "https://sport-marafon.ru/")
     @DisplayName("Проверка авторизации")
     void successfulAuthTest() {
-        mainPageStep.openAuthForm(baseUrl);
+        mainPage.openAuthForm();
         authPageStep.login(TEST_EMAIL, TEST_PASSWORD);
         mainPage.userVisibilityCheck();
     }
@@ -67,7 +64,7 @@ public class SportMarafonTests extends TestBase {
     @Link(url = "https://sport-marafon.ru/")
     @DisplayName("Проверка некорректной авторизации")
     void negativeAuthTest() {
-        mainPageStep.openAuthForm(baseUrl);
+        mainPage.openAuthForm();
         authPageStep.login(WRONG_TEST_EMAIL, TEST_PASSWORD);
         authPage.checkNegativeAuth(AUTH_ERR_MSG);
     }
@@ -84,7 +81,7 @@ public class SportMarafonTests extends TestBase {
     @Link(url = "https://sport-marafon.ru/")
     @DisplayName("Проверка регистрации")
     public void registrationTest() {
-        mainPageStep.openAuthForm(baseUrl);
+        mainPage.openAuthForm();
         authPageStep.setRegistrationForm(data);
         mainPage.userVisibilityCheck();
     }

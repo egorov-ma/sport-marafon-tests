@@ -16,8 +16,8 @@ public class MainPage {
             linkHeaderUser = $("a[class='header__user-initial']");
 
     @Step("Открываем главную страницу - {url}")
-    public MainPage openMainPage(String url) {
-        open(url);
+    public MainPage openMainPage() {
+        open("");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
@@ -31,6 +31,11 @@ public class MainPage {
     @Step("Переходим в профиль клиента")
     public void clickUser() {
         linkHeaderUser.click();
+    }
+
+    @Step("Переход на форму авторизации")
+    public void openAuthForm() {
+        openMainPage().clickAuth();
     }
 
     @Step("Проверка досупности личного кабмнета")

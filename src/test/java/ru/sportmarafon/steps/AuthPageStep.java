@@ -17,7 +17,7 @@ public class AuthPageStep {
 
     @Step("Заполнение формы регистрации")
     public void setRegistrationForm(TestData data) {
-        authPage.clickRegistration()
+        authPage.clickRegistrationLink()
                 .setRegistrationName(data.fullName)
                 .setRegistrationPhone(data.phone)
                 .setRegistrationEmail(data.email)
