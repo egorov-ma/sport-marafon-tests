@@ -102,6 +102,6 @@ public class SportMarafonTests extends TestBase {
     @DisplayName("Проверка профиля клиента")
     public void personalProfileTest() {
         personalAreaPageSteps.openTestPersonalProfile(TEST_EMAIL, TEST_PASSWORD);
-        personalAreaPageSteps.checkTestPersonalData();
+        personalAreaPageSteps.checkTestPersonalData(TEST_NAME, TEST_EMAIL, TEST_PHONE);
     }
 }
