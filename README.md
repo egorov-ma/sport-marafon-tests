@@ -16,10 +16,10 @@
 - <a href="#tg"> Уведомления в Telegram с использованием бота</a>
 - <a href="#video"> Видео примера запуска тестов в Selenoid</a>
 
-Тесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования <code>[Selenide](https://selenide.org/)</code>, сборщик - <code>Gradle</code>.
+Тесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования <code>Selenide</code>, сборщик - <code>Gradle</code>.
 
 <code>JUnit 5</code> задействован в качестве фреймворка модульного тестирования.
-При прогоне тестов для удаленного запуска используется <code>[Selenoid](https://aerokube.com/selenoid/)</code>.
+При прогоне тестов для удаленного запуска используется <code>Selenoid</code>.
 
 Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота.
 Также реализована интеграция с <code>Allure TestOps</code> и <code>Jira</code>.
